@@ -1,0 +1,7 @@
+{
+  "name": "seminar-app-ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
