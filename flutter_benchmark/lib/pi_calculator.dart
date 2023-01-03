@@ -28,7 +28,6 @@ class PiCalculator {
     for (int i = 0; i < k; i++) {
       yk1 = (1 - math.pow((1 - yk * yk * yk * yk), (0.25))) /
           (1 + math.pow((1 - yk * yk * yk * yk), (0.25)));
-      //ak1 = ak * math.pow((1 + yk1), 4) - math.pow(2, 2 * i + 3) * yk1 * (1 + yk1 + yk1 * yk1);
       ak1 = ak * math.pow((1 + yk1), 4.0) -
           math.pow(2.0, (2 * i + 3.0)) * yk1 * (1 + yk1 + yk1 * yk1);
       yk = yk1;
@@ -36,14 +35,5 @@ class PiCalculator {
     }
     return ak;
   }
-
-//  var rand = math.Random(100);
-//
-//  double mathPow(int iterations) {
-//    for (int i = 0; i < iterations; i++) {
-//      math.pow(i, 2);
-//    }
-//    return rand.nextDouble();
-//  }
 
 }

@@ -48,7 +48,6 @@ class _HomeState extends State<Home> {
   }
 
   pressGaussLegendreButton() {
-    //var startdate = DateTime.now().millisecondsSinceEpoch;
     final Stopwatch watch = Stopwatch();
     if (kDebugMode) {
       print('Pi calc tracker benchmark...');
@@ -56,24 +55,20 @@ class _HomeState extends State<Home> {
     watch.start();
     runGaussLegendreTest();
     watch.stop();
-    //var finishDate = DateTime.now().millisecondsSinceEpoch;
     final BenchmarkResultPrinter printer = BenchmarkResultPrinter();
     printer.addResult(
       description: 'Pi calc tracker',
       value: watch.elapsedMicroseconds / _kNumIters,
-      //value: (finishDate - startdate)/_kNumIters,
       unit: 'µs per iteration',
       name: 'iteration',
     );
     printer.printToStdout();
     setState(() {
       gaussLegendreTime = '${watch.elapsedMicroseconds / _kNumIters}';
-      //time ='${(finishDate - startdate)/_kNumIters}';
     });
   }
 
   pressBorweinButton() {
-    //var startdate = DateTime.now().millisecondsSinceEpoch;
     final Stopwatch watch = Stopwatch();
     if (kDebugMode) {
       print('Pi calc tracker benchmark...');
@@ -81,13 +76,11 @@ class _HomeState extends State<Home> {
     watch.start();
     runBorwein();
     watch.stop();
-    //var finishDate = DateTime.now().millisecondsSinceEpoch;
     if (kDebugMode) {
       final BenchmarkResultPrinter printer = BenchmarkResultPrinter();
       printer.addResult(
         description: 'Pi calc tracker',
         value: watch.elapsedMicroseconds / _kNumIters,
-        //value: (finishDate - startdate)/_kNumIters,
         unit: 'µs per iteration',
         name: 'iteration',
       );
@@ -95,7 +88,6 @@ class _HomeState extends State<Home> {
     }
     setState(() {
       borweinTime = '${watch.elapsedMicroseconds / _kNumIters}';
-      //time ='${(finishDate - startdate)/_kNumIters}';
     });
   }
 
